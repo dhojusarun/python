@@ -1,6 +1,13 @@
 import pandas as pd
 
-# delimeter is used to identify how data is separated
-df = pd.read_csv("first.csv", delimiter=",")
+df = pd.read_csv("HAM10000_metadata.csv", delimiter=",")
 
-print(df.head())
+print(df.head(10))
+
+print(df.tail(10))
+
+# how may null values
+print(df.isnull().sum())
+
+# how many duplicate values
+print(df.duplicated().sum())
