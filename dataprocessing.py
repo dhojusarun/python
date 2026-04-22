@@ -13,3 +13,17 @@ print(df.isnull().sum())
 print(df.duplicated().sum())
 
 
+#remove null values
+df.dropna()
+print(df)
+df.dropna(inplace=True)
+print(df)
+
+#remove duplicates
+df.drop_duplicates(inplace=True)
+
+#remove columns
+df.drop("name", axis=1, inplace=True)
+
+#remove rows
+df.drop(0, axis=0, inplace=True)
