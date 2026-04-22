@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("HAM10000_metadata.csv", delimiter=",")
+df = pd.read_csv("first.csv", delimiter=",")
 
 print(df.head(10))
 
@@ -27,3 +27,14 @@ df.drop("name", axis=1, inplace=True)
 
 #remove rows
 df.drop(0, axis=0, inplace=True)
+
+
+def convert_to_numeric(location):
+    if location == "ktm":
+        return 1
+    elif location == "bkt":
+        return 2
+    else:
+        return 3
+df['address'] = df['address'].apply(convert_to_numeric)
+print(df)
