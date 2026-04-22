@@ -11,3 +11,5 @@ print(df.isnull().sum())
 
 # how many duplicate values
 print(df.duplicated().sum())
+
+
