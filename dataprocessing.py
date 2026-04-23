@@ -13,22 +13,23 @@ print(df.isnull().sum())
 print(df.duplicated().sum())
 
 
-#remove null values
+# remove null values
 df.dropna()
 print(df)
 df.dropna(inplace=True)
 print(df)
 
-#remove duplicates
+# remove duplicates
 df.drop_duplicates(inplace=True)
 
-#remove columns
+# remove columns
 df.drop("name", axis=1, inplace=True)
 
-#remove rows
+# remove rows
 df.drop(0, axis=0, inplace=True)
 
 
+# transform data
 def convert_to_numeric(location):
     if location == "ktm":
         return 1
@@ -36,5 +37,7 @@ def convert_to_numeric(location):
         return 2
     else:
         return 3
-df['address'] = df['address'].apply(convert_to_numeric)
+
+
+df["address"] = df["address"].apply(convert_to_numeric)
 print(df)
