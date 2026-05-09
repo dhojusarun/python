@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("first.csv", delimiter=",")
+df = pd.read_csv("spam.csv", delimiter=",", encoding="latin-1")
 
 print(df.head(10))
 
@@ -13,19 +13,19 @@ print(df.isnull().sum())
 print(df.duplicated().sum())
 
 
-# # remove null values
-# df.dropna()
-# print(df)
-# df.dropna(inplace=True)
-# print(df)
+# remove null values
+df.dropna()
+print(df)
+df.dropna(inplace=True)
+print(df)
 
-# # remove duplicates
-# df.drop_duplicates(inplace=True)
+# remove duplicates
+df.drop_duplicates(inplace=True)
 
-# # remove columns
+# remove columns
 # df.drop("name", axis=1, inplace=True)
 
-# # remove rows
+# remove rows
 # df.drop(0, axis=0, inplace=True)
 
 
