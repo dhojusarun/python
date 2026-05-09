@@ -13,31 +13,31 @@ print(df.isnull().sum())
 print(df.duplicated().sum())
 
 
-# remove null values
-df.dropna()
-print(df)
-df.dropna(inplace=True)
-print(df)
+# # remove null values
+# df.dropna()
+# print(df)
+# df.dropna(inplace=True)
+# print(df)
 
-# remove duplicates
-df.drop_duplicates(inplace=True)
+# # remove duplicates
+# df.drop_duplicates(inplace=True)
 
-# remove columns
-df.drop("name", axis=1, inplace=True)
+# # remove columns
+# df.drop("name", axis=1, inplace=True)
 
-# remove rows
-df.drop(0, axis=0, inplace=True)
-
-
-# transform data
-def convert_to_numeric(location):
-    if location == "ktm":
-        return 1
-    elif location == "bkt":
-        return 2
-    else:
-        return 3
+# # remove rows
+# df.drop(0, axis=0, inplace=True)
 
 
-df["address"] = df["address"].apply(convert_to_numeric)
-print(df)
+# # transform data
+# def convert_to_numeric(location):
+#     if location == "ktm":
+#         return 1
+#     elif location == "bkt":
+#         return 2
+#     else:
+#         return 3
+
+
+# df["address"] = df["address"].apply(convert_to_numeric)
+# print(df)
